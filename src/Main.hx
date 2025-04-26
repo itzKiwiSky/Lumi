@@ -1,9 +1,11 @@
 package;
 
+import commands.RegisterLibrary;
 import comma.CliApp;
 import commands.InitCommand;
 import terminal.Terminal;
 import terminal.Color.TextColor;
+import tools.SetupConfig;
 
 class Main 
 {
@@ -11,6 +13,9 @@ class Main
 
     static function main() 
     {
+        // run some config stuff //
+        SetupConfig.setup();
+
         Terminal.printf([
             [ TextColor.BrightMagenta ], 
             " _                     _ ___  _____  \n",
@@ -27,6 +32,7 @@ class Main
 
         var app = new CliApp("", "");
         app.addCommand(new InitCommand());
+        app.addCommand(new RegisterLibrary());
         app.start();
     }
 }
