@@ -2,6 +2,7 @@ package comma;
 
 import comma.ParsedOptions;
 import comma.Command;
+import comma.ValueDefinition;
 
 class GenericCommand extends Command{
     var f:(CliApp, Array<String>, ParsedOptions)->Void;

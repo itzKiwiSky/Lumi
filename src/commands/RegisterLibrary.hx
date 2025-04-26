@@ -11,8 +11,8 @@ class RegisterLibrary extends Command
     public function new() 
         {
             super();
-            addValueDefinition(new ValueDefinition("name"));
-            addValueDefinition(new ValueDefinition("url"));
+            addValueDefinition(new ValueDefinition("name", "Name of the library to register", true));
+            addValueDefinition(new ValueDefinition("url", "The url where this library is located", true));
             //addOptionDefinition(new OptionDefinition("l", "libname", "library name"));
             //addOptionDefinition(new OptionDefinition("u", "url", "libray url"));
         }

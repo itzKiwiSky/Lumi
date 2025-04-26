@@ -4,7 +4,8 @@ import comma.ParsedOptions;
 import comma.Command;
 import comma.CliApp;
 
-class HelpCommand extends Command{
+class HelpCommand extends Command
+{
     override function getName():String {
         return "help";
     }
