@@ -26,14 +26,14 @@ A `.lumi` file is a simple JSON object that contains all the metadata responsibl
 
 ```json
 {
-    version: "0.0.1",
-    dependencies: [
+    "version": "0.0.1",
+    "dependencies": [
         {
-            name: "libname",
-            author: "authorname",
-            url: "urlhere",
-            git: {
-                branch: "master"
+            "name": "libname",
+            "author": "authorname",
+            "url": "urlhere",
+            "git": {
+                "branch": "master"
             }
         }
     ]
