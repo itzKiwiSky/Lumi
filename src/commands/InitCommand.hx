@@ -11,7 +11,7 @@ class InitCommand extends Command
     public function new() 
     {
         super();
-        addOptionDefinition(new OptionDefinition("name", "n", "Add a name to the project"));
+        addOptionDefinition(new OptionDefinition("n", "name", "Add a name to the project"));
     }
 
     override function getName()
@@ -25,7 +25,7 @@ class InitCommand extends Command
 
     override function onExecuted(app:CliApp, values:Array<String>,  options:ParsedOptions)
     {
-        var name: Dynamic = options.exists("name", "n") ? options.get("name", "n")[0] : "game";
+        var name: Dynamic = options.exists("n", "name") ? options.get("n", "name")[0] : "game";
         CreateTemplate.create(Sys.getCwd() + "/" + name);
     }
 }
