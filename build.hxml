@@ -1,0 +1,5 @@
+-cp src
+--library comma
+--main Main
+--cpp bin
+--resource resources/template.zip@template
