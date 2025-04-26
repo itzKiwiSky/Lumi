@@ -11,9 +11,10 @@ class RegisterLibrary extends Command
     public function new() 
         {
             super();
-            //addValueDefinition(new ValueDefinition("name"));
-            //addValueDefinition(new ValueDefinition("url"));
-            addOptionDefinition(new OptionDefinition("n", "libname", "libray name"));
+            addValueDefinition(new ValueDefinition("name"));
+            addValueDefinition(new ValueDefinition("url"));
+            //addOptionDefinition(new OptionDefinition("l", "libname", "library name"));
+            //addOptionDefinition(new OptionDefinition("u", "url", "libray url"));
         }
     
         override function getName()
@@ -27,6 +28,9 @@ class RegisterLibrary extends Command
     
         override function onExecuted(app:CliApp, values:Array<String>,  options:ParsedOptions)
         {
+
             
+            //if (!options.exists("l", "libname") || !options.exists("u", "url"))
+            //    app.printHelp();
         }
 }

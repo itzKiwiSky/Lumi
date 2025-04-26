@@ -2,8 +2,8 @@ package;
 
 import tools.LibraryDatabase;
 import commands.RegisterLibrary;
-import comma.CliApp;
 import commands.InitCommand;
+import comma.CliApp;
 import terminal.Terminal;
 import terminal.Color.TextColor;
 import tools.SetupConfig;

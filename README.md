@@ -39,3 +39,11 @@ A `.lumi` file is a simple JSON object that contains all the metadata responsibl
     ]
 }
 ```
+## Build
+
+This section explain how to build the app
+
+### Windows
+* Install `MSVC Build tools x86-64` and `Windows 10/11 SDK`. You can find it oon Visual Studio Community 2022
+* Install `HXCPP` with `haxelib install hxcpp`
+* run `haxe build.hxml`
