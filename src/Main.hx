@@ -1,16 +1,15 @@
 package;
 
+import commands.*;
 import tools.LibraryDatabase;
-import commands.RegisterLibrary;
-import commands.InitCommand;
-import comma.CliApp;
+//import commands.InitCommand;
 import terminal.Terminal;
 import terminal.Color.TextColor;
 import tools.SetupConfig;
 
-class Main 
+class Main
 {
-    public static var appsign = "lumi";
+    public inline static var appsign = "lumi";
     static var appVersion: String = "0.0.1";
 
     static function main() 
@@ -32,10 +31,5 @@ class Main
             [ TextColor.BrightMagenta ], "LOVE", [TextColor.BrightCyan ], "2D\n",
             [ TextColor.Cyan ], 'Version ${appVersion}',
         ]);
-
-        var app = new CliApp("", "");
-        app.addCommand(new InitCommand());
-        app.addCommand(new RegisterLibrary());
-        app.start();
     }
 }

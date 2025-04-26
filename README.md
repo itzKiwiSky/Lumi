@@ -47,3 +47,7 @@ This section explain how to build the app
 * Install `MSVC Build tools x86-64` and `Windows 10/11 SDK`. You can find it oon Visual Studio Community 2022
 * Install `HXCPP` with `haxelib install hxcpp`
 * run `haxe build.hxml`
+
+
+# Credits
+

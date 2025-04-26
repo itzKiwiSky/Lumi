@@ -1,13 +1,10 @@
 package commands;
 
-import comma.OptionDefinition;
-import tools.CreateTemplate;
-import comma.ParsedOptions;
-import comma.CliApp;
-import comma.Command;
-
-class InitCommand extends Command
+class InitCommand
 {
+    /**
+     * [Description]
+     
     public function new() 
     {
         super();
@@ -28,5 +25,5 @@ class InitCommand extends Command
     {
         var name: Dynamic = options.exists("n", "name") ? options.get("n", "name")[0] : "game";
         CreateTemplate.create(Sys.getCwd() + "/" + name, options.exists("v", "verbose"));
-    }
+    }*/
 }

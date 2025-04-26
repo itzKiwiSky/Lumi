@@ -1,0 +1,5 @@
+--library mlib 
+-cp src 
+--main Main 
+--resource resources/template.zip@template 
+--run Main.hx
