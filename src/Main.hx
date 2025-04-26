@@ -1,5 +1,6 @@
 package;
 
+import tools.LibraryDatabase;
 import commands.RegisterLibrary;
 import comma.CliApp;
 import commands.InitCommand;
@@ -9,12 +10,14 @@ import tools.SetupConfig;
 
 class Main 
 {
+    public static var appsign = "lumi";
     static var appVersion: String = "0.0.1";
 
     static function main() 
     {
         // run some config stuff //
         SetupConfig.setup();
+        LibraryDatabase.getDBContent();
 
         Terminal.printf([
             [ TextColor.BrightMagenta ], 

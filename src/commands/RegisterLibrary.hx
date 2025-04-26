@@ -1,5 +1,6 @@
 package commands;
 
+import comma.OptionDefinition;
 import comma.ValueDefinition;
 import comma.ParsedOptions;
 import comma.CliApp;
@@ -10,8 +11,9 @@ class RegisterLibrary extends Command
     public function new() 
         {
             super();
-            addValueDefinition(new ValueDefinition("name"));
-            addValueDefinition(new ValueDefinition("url"));
+            //addValueDefinition(new ValueDefinition("name"));
+            //addValueDefinition(new ValueDefinition("url"));
+            addOptionDefinition(new OptionDefinition("n", "libname", "libray name"));
         }
     
         override function getName()
@@ -25,6 +27,6 @@ class RegisterLibrary extends Command
     
         override function onExecuted(app:CliApp, values:Array<String>,  options:ParsedOptions)
         {
-
+            
         }
 }

@@ -33,7 +33,7 @@ A `.lumi` file is a simple JSON object that contains all the metadata responsibl
             author: "authorname",
             url: "urlhere",
             git: {
-                branch: "master",
+                branch: "master"
             }
         }
     ]
