@@ -1,5 +1,6 @@
 package commands;
 
+import comma.Table;
 import comma.OptionDefinition;
 import comma.ValueDefinition;
 import comma.ParsedOptions;
@@ -11,10 +12,10 @@ class RegisterLibrary extends Command
     public function new() 
         {
             super();
-            addValueDefinition(new ValueDefinition("name", "Name of the library to register", true));
-            addValueDefinition(new ValueDefinition("url", "The url where this library is located", true));
-            //addOptionDefinition(new OptionDefinition("l", "libname", "library name"));
-            //addOptionDefinition(new OptionDefinition("u", "url", "libray url"));
+            //addValueDefinition(new ValueDefinition("name"));
+            //addValueDefinition(new ValueDefinition("url"));
+            addOptionDefinition(new OptionDefinition("l", "libname", "library name"));
+            addOptionDefinition(new OptionDefinition("u", "url", "libray url"));
         }
     
         override function getName()
@@ -28,9 +29,22 @@ class RegisterLibrary extends Command
     
         override function onExecuted(app:CliApp, values:Array<String>,  options:ParsedOptions)
         {
+            if (!options.exists("l", "libname") || !options.exists("u", "url"))
+            {
+                app.println("Usage:");
+                var help = Table.create()
+                    .addRow()
+                    .addColumn(getName())
+                    .addEmptyColumn(8)
+                    .addColumn(getDescription()).toString();
 
-            
-            //if (!options.exists("l", "libname") || !options.exists("u", "url"))
-            //    app.printHelp();
+                var args = Table.create()
+                    .addRow()
+
+                for (opt in options)
+                    .addColumn(opt.)
+
+                app.println(help);
+            }
         }
 }
