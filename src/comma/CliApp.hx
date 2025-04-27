@@ -125,70 +125,57 @@ class CliApp {
         Main.displayLogo();
 
         println("A helpful help :)");
-        if (executeDefaultCommandOnly) 
-        {
-            println(Table.create()
-                .addRow()
-                .addColumn(defaultCommand.getName() + ":")
-                .addEmptyColumn(1)
-                .addColumn(defaultCommand.getDescription())
-                .toString());
-            return;
-        }
         if (commands.length > 0) 
         {
             println("Commands:");
 
             var table = Table.create();
-            for (c in commands) {
+            var argHelpStr: String = "";
+            for (c in commands) 
+            {
                 if (c.getName() == "")
                     continue;
+
                 table.addRow();
+                table.addColumn(c.getName());
+                table.addEmptyColumn(8);
+                table.addColumn(c.getDescription());
 
-                var commandNameColumn = "";
+                var arguments = c.arguments;
+                var argumentHelp = Table.create();
 
-                if (c != defaultCommand) {
-                    commandNameColumn = c.getName();
-                }
+                var argCount = Lambda.count(arguments);
 
-                var valueDefinitions = c.getValueDefinitions();
-                if (valueDefinitions.length > 0) {
-                    for (i in 0...valueDefinitions.length) {
-                        var valDef = c.getValueDefinitions()[i];
-                        if (i == 0) {
-                            commandNameColumn += " [";
-                        }
-                        commandNameColumn += valDef.name;
-
-                        if (i < valueDefinitions.length - 1) {
-                            commandNameColumn += ", ";
-                        }
-
-                        if (i == valueDefinitions.length - 1) {
-                            commandNameColumn += "]";
-                        }
+                if (argCount > 0)
+                {
+                    for (name => desc in arguments)
+                    {
+                        table.addRow();
+                        table.addColumn(Style.space(4) + '<${name}>');
+                        table.addEmptyColumn(4);
+                        table.addColumn(desc);
                     }
                 }
 
-                table.addColumn(commandNameColumn);
-
-                table.addEmptyColumn(8);
-                table.addColumn(c.getDescription());
-                if (c.getOptionDefinitions().length > 0) {
+                if (c.getOptionDefinitions().length > 0) 
+                {
                     table.addRow();
-                    for (optDef in c.getOptionDefinitions()) {
+                    for (optDef in c.getOptionDefinitions()) 
+                    {
                         var optDefNameColumn = "-" + optDef.getName();
-                        if (optDef.getAlias() != "") {
+                        if (optDef.getAlias() != "") 
                             optDefNameColumn += " --" + optDef.getAlias();
-                        }
-                        table.addColumn(Style.tab(1, true) + optDefNameColumn);
-                        table.addEmptyColumn(8);
+                        table.addColumn(Style.space(4) + optDefNameColumn);
+                        table.addEmptyColumn(4);
                         table.addColumn(optDef.getDescription());
                         table.addRow();
                     }
                 }
+
             }
-            println(table.toString(1));
+            var hlp = table.toString(1);
+
+            Sys.println(hlp);
         }
     }
 }

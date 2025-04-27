@@ -37,8 +37,6 @@ class Command
     }
 
     public final function execute(app: CliApp, values: Array<String>, options: ParsedOptions){
-        if (values.length != valueDefinitions.length)
-            printCommandHelp(app);
         onExecuted(app, values, options);
     }
 

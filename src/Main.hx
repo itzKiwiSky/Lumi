@@ -1,5 +1,6 @@
 package;
 
+import commands.LibraryList;
 import comma.Style.TextStyle;
 import tools.LibraryDatabase;
 import commands.RegisterLibrary;
@@ -26,10 +27,11 @@ class Main
                 "   | |___| |_| |\\ V /| |/ /_| |__| |\n",
                 "   |______\\__,_| \\_/ |_|____|_____/ \n",
                 "                                    \n",
-                
+                "\n",
                 [ TextColor.BrightCyan, TextStyle.Bold ], "Luvi2D - A CLI Toolkit for ",
                 [ TextColor.BrightMagenta ], "LOVE", [TextColor.BrightCyan ], "2D\n",
                 [ TextColor.Cyan ], 'Version ${appVersion}',
+                "\n",
             ]);
         }
 
@@ -44,6 +46,7 @@ class Main
         var app = new CliApp("", "");
         app.addCommand(new InitCommand());
         app.addCommand(new RegisterLibrary());
+        app.addCommand(new LibraryList());
         app.start();
     }
 }
