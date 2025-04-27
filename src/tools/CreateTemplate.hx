@@ -1,5 +1,7 @@
 package tools;
 
+import haxe.Json;
+import haxe.io.Bytes;
 import sys.FileSystem;
 import sys.io.File;
 import haxe.io.BytesInput;
@@ -8,6 +10,12 @@ import haxe.Resource;
 
 class CreateTemplate 
 {
+
+    private static var templateLuvi = {
+        version: "0.0.1",
+        dependencies: [],
+    };
+
     public static function create(dest: String, verbose: Bool = false)
     {
         var bytes = Resource.getBytes("template");
@@ -50,5 +58,9 @@ class CreateTemplate
                 f.close();
             }
         }
+
+        var ldb = File.write(dest + "/.luvi", false);
+        ldb.write(Bytes.ofString(Json.stringify(templateLuvi)));
+        ldb.close();
     }
 }

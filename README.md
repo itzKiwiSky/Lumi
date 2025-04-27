@@ -13,7 +13,9 @@ Lumi provides a simples yet powerful CLI to help manage your love projects
 
 ### The template
 
-By default the template comes structured to be builded with [lover](https://github.com/Wolfyxon/lover?tab=readme-ov-file) and also comes with a blank library folder, where it can be controlled by the `.lumi` file that are inside the template folder.
+By default the template comes structured to be builded with [lover](https://github.com/Wolfyxon/lover?tab=readme-ov-file) and also comes with a blank library folder, where it can be controlled by the `.luvi` file that are inside the template folder.
+
+
 
 This file is responsible to keep track of every single dependency you installed on your project. Similar as a `package.json`.
 
