@@ -13,6 +13,8 @@ class Command
     var valueDefinitions: Array<ValueDefinition> = new Array<ValueDefinition>();
     var argumentDefinition: Array<ArgumentDefinition> = new Array<ArgumentDefinition>();
 
+    public var arguments: Map<String, String> = new Map<String, String>();
+
     public function getName(){ return ""; }
 
     public function addOptionDefinition(def: OptionDefinition){ optionDefinitions.push(def); }

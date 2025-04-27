@@ -9,8 +9,6 @@ import comma.Command;
 
 class RegisterLibrary extends Command
 {
-    var arguments: Map<String, String> = new Map<String, String>();
-
     public function new() 
     {
         super();
