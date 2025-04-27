@@ -71,6 +71,7 @@ class CliApp {
         //var cwd = args.pop();
         var options = ParsedOptions.parse(args);
         var values = parseValues(args);
+        var arguments = "";
 
         //Sys.setCwd(cwd);
 
@@ -99,9 +100,8 @@ class CliApp {
         var ret = new Array<String>();
         for (i in 1...args.length) {
             var val = args[i];
-            if (val.charAt(0) == "-") {
+            if (val.charAt(0) == "-")
                 return ret;
-            }
             ret.push(val);
         }
         return ret;
@@ -122,6 +122,8 @@ class CliApp {
 
     public function printHelp() 
     {
+        Main.displayLogo();
+
         println("A helpful help :)");
         if (executeDefaultCommandOnly) 
         {

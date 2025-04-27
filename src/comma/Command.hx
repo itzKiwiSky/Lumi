@@ -7,11 +7,11 @@ import comma.OptionDefinition;
 
 class Command
 {
-    
     public function new(){}
 
     var optionDefinitions: Array<OptionDefinition> = new Array<OptionDefinition>();
     var valueDefinitions: Array<ValueDefinition> = new Array<ValueDefinition>();
+    var argumentDefinition: Array<ArgumentDefinition> = new Array<ArgumentDefinition>();
 
     public function getName(){ return ""; }
 
@@ -19,9 +19,13 @@ class Command
 
     public function addValueDefinition(def: ValueDefinition){ valueDefinitions.push(def); }
 
+    public function addArgumentDefinition(def: ArgumentDefinition) { argumentDefinition.push(def); }
+
     public function getOptionDefinitions(){ return optionDefinitions; }
 
     public function getValueDefinitions(){ return valueDefinitions; }
+    
+    public function getArgumentDefinitions(){ return argumentDefinition; }
 
     public function getDescription(){ return ""; }
 
@@ -35,21 +39,13 @@ class Command
         return null;
     }
 
-    public final function execute(app:CliApp,values: Array<String>, options:ParsedOptions){
+    public final function execute(app: CliApp, values: Array<String>, options: ParsedOptions, ?args: Array<ArgumentDefinition>){
         if (values.length != valueDefinitions.length)
-        {
-            app.println("Usage:");
-            var help = Table.create()
-                .addRow()
-                .addColumn(getName())
-                .addEmptyColumn(8)
-                .addColumn(getDescription()).toString();
-
-            app.println(help);
-            return;
-        }
+            printCommandHelp(app);
         onExecuted(app, values, options);
     }
 
-    function onExecuted(app, value, options){}
+    public function printCommandHelp(app: CliApp) {}
+
+    public function onExecuted(app, value, options){}
 }

@@ -1,5 +1,7 @@
 package commands;
 
+import comma.Table;
+import comma.ArgumentDefinition;
 import comma.OptionDefinition;
 import tools.CreateTemplate;
 import comma.ParsedOptions;
@@ -8,6 +10,8 @@ import comma.Command;
 
 class InitCommand extends Command
 {
+    var arguments: Map<String, String> = new Map<String, String>();
+
     public function new() 
     {
         super();
@@ -22,6 +26,18 @@ class InitCommand extends Command
     override function getDescription()
     {
         return "Initialize a new project based on a template";
+    }
+
+    override function printCommandHelp(app: CliApp) {
+        app.println("Usage:");
+        var help = Table.create()
+            .addRow()
+            .addColumn(getName())
+            .addEmptyColumn(8)
+            .addColumn(getDescription()).toString();
+
+        //app.println(help);
+        return;
     }
 
     override function onExecuted(app:CliApp, values:Array<String>,  options:ParsedOptions)
