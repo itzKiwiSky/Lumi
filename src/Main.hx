@@ -18,12 +18,12 @@ class Main
     public static function displayLogo() 
         {
             Terminal.printf([
-                [ TextColor.Magenta ], 
+                [ TextColor.BrightMagenta ], 
                 "    _     _   _       _ ___  _____  \n",
                 "   | |   (_) (_)     (_)__ \\|  __ \\ \n",
                 "   | |    _   ___   ___   ) | |  | |\n",
                 "   | |   | | | \\ \\ / / | / /| |  | |\n",
-                [ TextColor.BrightMagenta ], 
+                [ TextColor.BrightCyan ], 
                 "   | |___| |_| |\\ V /| |/ /_| |__| |\n",
                 "   |______\\__,_| \\_/ |_|____|_____/ \n",
                 "                                    \n",

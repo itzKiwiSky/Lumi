@@ -1,10 +1,12 @@
-# Lume2D Toolkit
+![alt text](assets/luvi-banner.png)
+
+# Luvi Toolkit
 
 A Command Line Interface (CLI) toolkit for [Love2D](https://love2d.org)
 
 ## Features
 
-Lumi provides a simples yet powerful CLI to help manage your love projects
+Luvi provides a simples yet powerful CLI to help manage your love projects
 
 * Create projects from a template with a lot of configurations and pre made code.
 * Add or remove libraries as you need
@@ -19,9 +21,9 @@ By default the template comes structured to be builded with [lover](https://gith
 
 This file is responsible to keep track of every single dependency you installed on your project. Similar as a `package.json`.
 
-### A lumi file spec
+### A luvi file spec
 
-A `.lumi` file is a simple JSON object that contains all the metadata responsible to keep track of the project dependencies
+A `.luvi` file is a simple JSON object that contains all the metadata responsible to keep track of the project dependencies
 
 * `version`: The file version
 * `dependencies`: The actual core of this file, contains data of each library.
