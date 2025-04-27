@@ -11,7 +11,6 @@ class Command
 
     var optionDefinitions: Array<OptionDefinition> = new Array<OptionDefinition>();
     var valueDefinitions: Array<ValueDefinition> = new Array<ValueDefinition>();
-    var argumentDefinition: Array<ArgumentDefinition> = new Array<ArgumentDefinition>();
 
     public var arguments: Map<String, String> = new Map<String, String>();
 
@@ -21,14 +20,10 @@ class Command
 
     public function addValueDefinition(def: ValueDefinition){ valueDefinitions.push(def); }
 
-    public function addArgumentDefinition(def: ArgumentDefinition) { argumentDefinition.push(def); }
-
     public function getOptionDefinitions(){ return optionDefinitions; }
 
     public function getValueDefinitions(){ return valueDefinitions; }
     
-    public function getArgumentDefinitions(){ return argumentDefinition; }
-
     public function getDescription(){ return ""; }
 
     function getOptionDefinitionOfName(name: String)
@@ -41,7 +36,7 @@ class Command
         return null;
     }
 
-    public final function execute(app: CliApp, values: Array<String>, options: ParsedOptions, ?args: Array<ArgumentDefinition>){
+    public final function execute(app: CliApp, values: Array<String>, options: ParsedOptions){
         if (values.length != valueDefinitions.length)
             printCommandHelp(app);
         onExecuted(app, values, options);

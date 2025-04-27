@@ -1,7 +1,6 @@
 package commands;
 
 import comma.Table;
-import comma.ArgumentDefinition;
 import comma.OptionDefinition;
 import tools.CreateTemplate;
 import comma.ParsedOptions;
