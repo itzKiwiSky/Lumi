@@ -1,5 +1,6 @@
 package;
 
+import commands.InstallLib;
 import commands.LibraryList;
 import comma.Style.TextStyle;
 import tools.LibraryDatabase;
@@ -44,9 +45,12 @@ class Main
         //displayLogo();
 
         var app = new CliApp("", "");
+
         app.addCommand(new InitCommand());
         app.addCommand(new RegisterLibrary());
         app.addCommand(new LibraryList());
+        app.addCommand(new InstallLib());
+        
         app.start();
     }
 }

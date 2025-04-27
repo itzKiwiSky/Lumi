@@ -1,4 +1,5 @@
 -cp src 
+--library hxcurl
 --main Main 
 --resource resources/template.zip@template 
 --run Main.hx
