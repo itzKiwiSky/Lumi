@@ -1,10 +1,12 @@
 package commands;
 
-class InitCommand
+import cli.Command;
+import cli.CommandController;
+
+class InitCommand extends Command
 {
     /**
-     * [Description]
-     
+     *
     public function new() 
     {
         super();
@@ -26,4 +28,14 @@ class InitCommand
         var name: Dynamic = options.exists("n", "name") ? options.get("n", "name")[0] : "game";
         CreateTemplate.create(Sys.getCwd() + "/" + name, options.exists("v", "verbose"));
     }*/
+
+    public function new() 
+    {
+        super("init", "Initialize a new project based on a template");
+    }
+
+    override function onRun(args: Dynamic, options: Dynamic)
+    {
+        trace("here");
+    }
 }

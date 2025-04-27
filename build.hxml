@@ -1,5 +1,4 @@
 -cp src
 --main Main
 --cpp bin
---library mlib
 --resource resources/template.zip@template
