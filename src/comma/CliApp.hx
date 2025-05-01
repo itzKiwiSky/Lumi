@@ -130,7 +130,6 @@ class CliApp {
             println("Commands:");
 
             var table = Table.create();
-            var argHelpStr: String = "";
             for (c in commands) 
             {
                 if (c.getName() == "")
@@ -138,25 +137,22 @@ class CliApp {
 
                 table.addRow();
                 table.addColumn(c.getName());
-                table.addEmptyColumn(8);
+                table.addEmptyColumn(10);
                 table.addColumn(c.getDescription());
 
-                var arguments = c.arguments;
-                var argumentHelp = Table.create();
-
-                var argCount = Lambda.count(arguments);
+                var argCount = Lambda.count(c.arguments);
 
                 if (argCount > 0)
                 {
-                    for (name => desc in arguments)
+                    for (name => desc in c.arguments)
                     {
                         table.addRow();
                         table.addColumn(Style.space(4) + '<${name}>');
                         table.addEmptyColumn(4);
                         table.addColumn(desc);
                     }
+                    table.addRow();
                 }
-
                 if (c.getOptionDefinitions().length > 0) 
                 {
                     table.addRow();
@@ -173,9 +169,7 @@ class CliApp {
                 }
 
             }
-            var hlp = table.toString(1);
-
-            Sys.println(hlp);
+            Sys.println(table.toString(1));
         }
     }
 }

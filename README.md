@@ -43,6 +43,13 @@ A `.luvi` file is a simple JSON object that contains all the metadata responsibl
     ]
 }
 ```
+
+## Requirements
+
+To use the install commands on git urls, you need to have [git](https://git-scm.com) installed.
+
+And to used the build command, need to have [lover](https://github.com/Wolfyxon/lover) installed on machine.
+
 ## Build
 
 This section explain how to build the app
