@@ -40,7 +40,10 @@ class Command
         onExecuted(app, values, options);
     }
 
-    public function printCommandHelp(app: CliApp) {}
+    public function printCommandHelp(app: CliApp) 
+    {
+        app.printHelp();
+    }
 
     public function onExecuted(app, value, options){}
 }

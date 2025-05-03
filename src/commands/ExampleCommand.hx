@@ -5,6 +5,9 @@ import tools.CreateTemplate;
 import comma.ParsedOptions;
 import comma.CliApp;
 import comma.Command;
+/**
+ * Just a dummy command template for me, so I can just ctrl-c and ctrl-v it
+*/
 
 class ExampleCommand extends Command
 {

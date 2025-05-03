@@ -16,37 +16,11 @@ class RemoveLibrary extends Command
     
     override function getName()
     {
-        return "addlib";
+        return "removelib";
     }
     override function getDescription()
     {
-        return "Add a new library on the local database";
-    }
-
-    override function printCommandHelp(app:CliApp) {
-        var help = Table.create()
-        .addRow()
-        .addColumn(getName())
-        .addEmptyColumn(8)
-        .addColumn(getDescription())
-        .addRow()
-        .addEmptyColumn(5)
-        .toString(1);
-
-        for (name => desc in arguments)
-        {
-            var argumentHelp = Table.create()
-            .addRow()
-            .addEmptyColumn(4)
-            .addColumn('<${name}>')
-            .addEmptyColumn(6)
-            .addColumn(desc)
-            .toString(1);
-
-            help += argumentHelp;
-        }
-
-        Sys.println(help);
+        return "Remove the library from the local database";
     }
 
     override function onExecuted(app:CliApp, values:Array<String>,  options:ParsedOptions)
@@ -55,7 +29,7 @@ class RemoveLibrary extends Command
 
         if (libname == null)
         {
-            printCommandHelp(app);
+            app.printHelp();
             return;
         }
 

@@ -2,7 +2,7 @@ package comma;
 
 class ParsedOptions
 {
-    var options = new Map<String, Array<String>>();
+    public var options = new Map<String, Array<String>>();
     function new(){}
 
     public static function parse(options:Array<String>)

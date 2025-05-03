@@ -7,7 +7,7 @@ class Table {
     private var rows:Array<Array<String>> = new Array<Array<String>>();
 
 
-    private function new() {}
+    public function new() {}
 
     public static function create() {
         return new Table();

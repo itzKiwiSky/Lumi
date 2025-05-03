@@ -1,5 +1,6 @@
 package;
 
+import commands.RemoveLibrary;
 import commands.InstallLib;
 import commands.LibraryList;
 import comma.Style.TextStyle;
@@ -48,6 +49,7 @@ class Main
 
         app.addCommand(new InitCommand());
         app.addCommand(new RegisterLibrary());
+        app.addCommand(new RemoveLibrary());
         app.addCommand(new LibraryList());
         app.addCommand(new InstallLib());
         

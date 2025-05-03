@@ -25,15 +25,9 @@ class InitCommand extends Command
         return "Initialize a new project based on a template";
     }
 
-    override function printCommandHelp(app: CliApp) {
-        app.println("Usage:");
-        var help = Table.create()
-            .addRow()
-            .addColumn(getName())
-            .addEmptyColumn(8)
-            .addColumn(getDescription()).toString();
-
-        //app.println(help);
+    override function printCommandHelp(app: CliApp) 
+    {
+        app.printHelp();
         return;
     }
 
