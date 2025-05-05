@@ -1,5 +1,6 @@
 package;
 
+import commands.TestGet;
 import commands.RemoveLibrary;
 import commands.InstallLib;
 import commands.LibraryList;
@@ -52,6 +53,9 @@ class Main
         app.addCommand(new RemoveLibrary());
         app.addCommand(new LibraryList());
         app.addCommand(new InstallLib());
+
+        // test command //
+        app.addCommand(new TestGet());
         
         app.start();
     }

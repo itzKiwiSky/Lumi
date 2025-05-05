@@ -1,5 +1,5 @@
 -cp src 
---library hxcurl
+--library http-socket
 --main Main 
 --resource resources/template.zip@template 
 --run Main.hx

@@ -1,5 +1,5 @@
 -cp src
 --main Main
---library hxcurl
+--library http-socket
 --cpp bin
 --resource resources/template.zip@template

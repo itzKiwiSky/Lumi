@@ -14,6 +14,9 @@ class SetupConfig
         if (!FileSystem.exists(savePath + "/libraries"))
             FileSystem.createDirectory(savePath + "/libraries");
 
+        if (!FileSystem.exists(savePath + "/temp"))
+            FileSystem.createDirectory(savePath + "/temp");
+
         if (!FileSystem.exists(savePath + "/database.json"))
         {
             var dbfile:FileOutput = File.write(savePath + "/database.json", false);
